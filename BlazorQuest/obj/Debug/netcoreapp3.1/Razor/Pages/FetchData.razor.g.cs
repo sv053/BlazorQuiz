@@ -73,6 +73,20 @@ using BlazorQuest.Shared;
 #line hidden
 #nullable disable
 #nullable restore
+#line 11 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+using Telerik.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+using Telerik.Blazor.Components;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\Pages\FetchData.razor"
 using BlazorQuest.Data;
 

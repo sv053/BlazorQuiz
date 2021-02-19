@@ -3,6 +3,7 @@
     "additionalProbingPaths": [
       "C:\\Users\\scena\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\scena\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages",
       "C:\\Microsoft\\Xamarin\\NuGet"
     ]
   }

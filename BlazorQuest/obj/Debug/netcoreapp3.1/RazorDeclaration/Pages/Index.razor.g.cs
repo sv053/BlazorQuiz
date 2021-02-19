@@ -13,64 +13,78 @@ namespace BlazorQuest.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 1 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 2 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 3 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 4 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 5 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 6 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 7 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 8 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using BlazorQuest;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 9 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using BlazorQuest.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+using Telerik.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+using Telerik.Blazor.Components;
 
 #line default
 #line hidden
@@ -83,6 +97,73 @@ using BlazorQuest.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 46 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\Pages\Index.razor"
+       
+    Telerik.Blazor.Components.TelerikStockChart myStockChartRef { get; set; }
+
+    string ContainerWidth { get; set; } = "400px";
+    string ContainerHeight { get; set; } = "300px";
+
+    public List<StockDataPoint> StockChartProduct1Data { get; set; }
+
+    async Task ResizeChart()
+    {
+        ContainerHeight = "500px";
+        ContainerWidth = "800px";
+
+        await Task.Delay(20);
+
+        myStockChartRef.Refresh();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GenerateChartData();
+    }
+
+    public async Task GenerateChartData()
+    {
+        StockChartProduct1Data = new List<StockDataPoint>()
+{
+            new StockDataPoint(new DateTime(2019, 1, 1), 41.62m, 40.12m, 41.69m, 39.81m, 2632000),
+            new StockDataPoint(new DateTime(2019, 2, 1), 39.88m, 40.12m, 41.12m, 39.75m, 3584700),
+            new StockDataPoint(new DateTime(2019, 3, 1), 42m, 42.62m, 43.31m, 41.38m, 7631700),
+            new StockDataPoint(new DateTime(2019, 4, 1), 42.25m, 43.06m, 43.31m, 41.12m, 4922200)
+        };
+
+        await Task.FromResult(StockChartProduct1Data);
+    }
+
+    public class StockDataPoint
+    {
+        public StockDataPoint() { }
+
+        public StockDataPoint(DateTime date, decimal open, decimal close, decimal high, decimal low, int volume)
+        {
+            Date = date;
+            Open = open;
+            Close = close;
+            High = high;
+            Low = low;
+            Volume = volume;
+        }
+        public DateTime Date { get; set; }
+
+        public decimal Open { get; set; }
+
+        public decimal Close { get; set; }
+
+        public decimal High { get; set; }
+
+        public decimal Low { get; set; }
+
+        public int Volume { get; set; }
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

@@ -13,64 +13,78 @@ namespace BlazorQuest.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 1 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 2 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 3 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 4 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 5 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 6 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 7 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 8 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using BlazorQuest;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+#line 9 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
 using BlazorQuest.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+using Telerik.Blazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\_Imports.razor"
+using Telerik.Blazor.Components;
 
 #line default
 #line hidden
@@ -83,6 +97,28 @@ using BlazorQuest.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 16 "c:\Users\scena\source\repos\BlazorQuest\BlazorQuest\Pages\MyFirstComponent.razor"
+       
+    public IEnumerable<SampleData> MyData = Enumerable.Range(1, 30).Select(x => new SampleData
+    {
+        Id = x,
+        Name = "name " + x,
+        Team = "team " + x % 5,
+        HireDate = DateTime.Now.AddDays(-x).Date
+    });
+
+    public class SampleData
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Team { get; set; }
+        public DateTime HireDate { get; set; }
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

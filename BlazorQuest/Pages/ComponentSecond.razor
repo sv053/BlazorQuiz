@@ -1,0 +1,15 @@
+﻿@page "/second"
+
+@StartValue?.ToString("dd MMM yyyy")
+<br />
+@EndValue?.ToString("dd MMM yyyy")
+<br />
+<TelerikDateRangePicker @bind-StartValue="@StartValue"
+                        @bind-EndValue="@EndValue">
+</TelerikDateRangePicker>
+
+@code {
+    public DateTime? StartValue { get; set; } = DateTime.Now;
+    public DateTime? EndValue { get; set; } = DateTime.Now.AddDays(10);
+}
+
